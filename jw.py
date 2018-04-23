@@ -3,8 +3,7 @@
 # Date    : 2018-04-23 18:18:00
 # Author  : b4zinga
 # Email   : b4zinga@outlook.com
-# Function: 爆破xxx用户名密码并采集其中信息保存至sqlite3数据库.
-# requirements: 需要安装pytesseract和PIL库识别验证码	requests库
+# Function: 爆破xxx用户名密码并采集其中信息保存至sqlite3数据库. 需要安装pytesseract和PIL库识别验证码	requests库
 
 import requests
 import pytesseract
