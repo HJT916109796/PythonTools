@@ -85,19 +85,21 @@ class Redis(DB):
     def conn(self):
         sock = socket.socket()
         try:
-            sock.connect((self.host, self.port))
+            sock.connect((self.host, int(self.port)))
         except Exception as err:
             print(err)
             sys.exit(0)
         return sock
 
     def exec(self, sql):
+        if sql=='':
+            return
         sql = self.makeCmd(sql)
         try:
-            self.conn.send(cmd.encode())
+            self.db.send(sql.encode())
             while True:
-                recv = self.conn.recv(1024)
-                print(handleRecv(recv))
+                recv = self.db.recv(1024)
+                print(self.handleRecv(recv))
                 if len(recv)<1024:  # 循环接收1024, 如果长度小于1024则默认后面已经无内容,break
                     break
         except Exception as err:
