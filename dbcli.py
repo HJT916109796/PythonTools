@@ -5,8 +5,10 @@
 # Email   : b4zinga@outlook.com
 # Function: database command line tool.
 
-import socket
+
+import re
 import sys
+import socket
 import pymysql
 import pymssql
 import argparse
