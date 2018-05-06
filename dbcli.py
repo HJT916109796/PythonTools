@@ -10,6 +10,7 @@ import sys
 import pymysql
 import pymssql
 import argparse
+from prettytable import PrettyTable
 
 
 class DB:
@@ -25,11 +26,15 @@ class DB:
         pass
     
     def exec(self, sql):
+        table = PrettyTable()
         self.cursor = self.db.cursor()
         rows = self.cursor.execute(sql)
         results = self.cursor.fetchall()
         for result in results:
-            print(result)
+            table.add_row(result)
+        if not table.get_string() == '++\n||\n++\n++':
+            print(table)
+
 
     def close(self):
         self.db.close()
