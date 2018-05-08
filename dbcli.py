@@ -4,9 +4,7 @@
 # Author  : b4zinga
 # Email   : b4zinga@outlook.com
 # Function: database command line tool.
-
 # TODO    : add oracle/mongodb/postgresql/Sybase/...
-
 
 import re
 import sys
@@ -179,6 +177,13 @@ def cli():
         cmd = input(">")
         if cmd == "exit":
             break
+
+        if args.server == "mssql":
+            if "show databases" in cmd.strip():
+                cmd = "SELECT Name FROM Master..SysDatabases ORDER BY Name"
+            if cmd.strip() == "show tables":
+                print("use: SELECT Name FROM DatabaseName..SysObjects Where XType='U' ORDER BY Name ")
+                continue
 
         try:
             mydb.exec(cmd)
