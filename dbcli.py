@@ -5,6 +5,8 @@
 # Email   : b4zinga@outlook.com
 # Function: database command line tool.
 
+# TODO    : add oracle/mongodb/postgresql/Sybase/...
+
 
 import re
 import sys
