@@ -8,4 +8,5 @@ Some Useful Python Scripts
 | crackRouter.py       | 爆破路由器管理密码(已测试 TP-Link、 FAST)    |
 | jw.py                | xxxxxxxxxxxxxxx|
 | dbcli.py             | python 数据库连接助手. (details: [http://www.cnblogs.com/0x4D75/p/9000225.html](http://www.cnblogs.com/0x4D75/p/9000225.html)) |
+|cnblogs theme.css |  个性化博客园主题 (详见: [http://www.cnblogs.com/0x4D75/p/8965227.html](http://www.cnblogs.com/0x4D75/p/8965227.html))|
 
